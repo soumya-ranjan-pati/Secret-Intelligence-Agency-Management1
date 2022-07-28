@@ -1,0 +1,53 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        tr#y2:nth-child(odd){
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+
+<table>
+<tr>
+    <th>{% include "sideindex.html" %}</th>
+    <th width="1000">
+   <table align="center" border="1">
+   <tr bgcolor="#fffff0">
+      <th>Agent Id</th>
+      <th>Agent name</th>
+      <th>DOB</th>
+      <th>CNO</th>
+      <th>Qualification</th>
+      <th>Address</th>
+      <th>Image</th>
+    </tr>
+
+{% for x in data %}
+    <tr bgcolor="#fffacd" id="y2">
+    <th>{{ x.id }}</th>
+    <th>{{ x.Agent_Name }}</th>
+    <th>{{ x.Dob }}</th>
+    <th>{{ x.Contact_Number }}</th>
+    <th>{{ x.Qualification }}</th>
+    <th>{{ x.Address }}</th>
+    <th>
+        <img src="{{ x.image.url }}" width="50" height="50">
+        </th>
+    </tr>
+    {% endfor %}
+
+</table>
+    </th>
+</tr>
+</table>
+
+
+</body>
+</html>

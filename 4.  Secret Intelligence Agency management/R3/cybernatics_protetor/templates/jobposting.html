@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<font color="green">
+<table>
+<tr><th>{% include "sideindex.html" %}</th>
+
+    <form action="/postsaved/" method="post">
+        {% csrf_token %}
+
+<th width="1000"><table align="center">
+    <tr><th>Job</th>
+    <th><input type="text" required name="job"></th></tr>
+    <tr><th>Title</th>
+    <th><input type="text" required name="name"></th></tr>
+    <tr><th>Qualification</th>
+    <th><input type="text" required name="qualification"></th></tr>
+    <tr><th>Percentage</th>
+    <th><input type="number" required name="percentage"></th></tr>
+    <tr><th>Experience</th>
+    <th><input type="text" required name="exp"></th></tr>
+    <tr><th>Last Date</th>
+    <th><input type="date" required name="lastdate"></th></tr>
+    <tr><th>Location</th>
+    <th><input type="text" required name="location"></th></tr>
+    <tr><th>Salary</th>
+    <th><input type="number" required name="salary"></th></tr>
+    <tr>
+    <th colspan="2"><input type="submit" value="Post"></th></tr>
+</table></th>
+        </form>
+</tr>
+</table>
+
+<h1>{{ message }}</h1>
+</font>
+</body>
+</html>

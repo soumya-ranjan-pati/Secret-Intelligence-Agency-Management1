@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<font color="green">
+<form action="/agentregister/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<table>
+<tr><th>{% include "sideindex.html" %}</th>
+<th width="1000"><table align="center">
+    <tr><th>Agent Name</th>
+    <th><input type="text" required name="name"></th></tr>
+    <tr><th>Password</th>
+    <th><input type="text" required name="password"></th></tr>
+    <tr><th>Date of Birth</th>
+    <th><input type="date" required name="dateofbirth"></th></tr>
+    <tr><th>Contact Number</th>
+    <th><input type="number" required name="cno"></th></tr>
+    <tr><th>Qualification</th>
+    <th><input type="text" required name="quali"></th></tr>
+    <tr><th>Address</th>
+    <th><input type="text" required name="adress"></th></tr>
+
+    <tr><th>Image</th>
+    <th><input type="file" name="image"></th></tr>
+
+    <th colspan="2" ><input type="submit" value="Create"></th></tr>
+</table>
+</table>
+    </form>
+<h1 align="center">{{ message }}</h1>
+    </font>
+</body>
+</html>

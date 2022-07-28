@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+    <tr>
+        <th  width="200">
+            {% include "sideindex.html" %}
+        </th>
+
+        <th width="1000">
+            <table align="center" border="2">
+                <tr bgcolor="#a9a9a9 ">
+                    <th>ID</th>
+                    <th>Name of the Person</th>
+                    <th>Location</th>
+                    <th>Suggession</th>
+                </tr>
+                {% for x in object_list %}
+                    <tr bgcolor="#fdf5e6">
+                    <th>{{ x.id }}</th>
+                    <th>{{ x.Name }}</th>
+                    <th>{{ x.Location }}</th>
+                    <th>
+                        {{ x.Suggession }}
+                    </th>
+                    </tr>
+                {% endfor %}
+
+            </table>
+    </th>
+    </tr></table>
+</form>
+</body>
+</html>

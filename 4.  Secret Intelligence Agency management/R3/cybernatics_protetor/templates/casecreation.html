@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#ffefd5">
+<font color="green">
+    {% include "heading.html" %}
+<form action="/create_case/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+
+<table><tr><th>{% include "sideindex_defence.html" %}</th>
+<th width="1000"><table align="center">
+    <th colspan="2">CASE CREATION</th>
+    <tr><th>case name</th>
+    <th><input type="text" required name="case name"></th></tr>
+    <tr><th>case details</th>
+    <th><input type="text" required name="case details"></th></tr>
+    <tr><th>date of creation </th>
+    <th><input type="date" required name="date"></th></tr>
+    <tr><th>evidence provided </th>
+    <th><input type="text" required name="evidence"></th></tr>
+
+    <tr><th>Image</th>
+    <th><input type="file" required name="image"></th></tr>
+
+    <th colspan="2"><input type="submit" value="create"></th>
+    </tr>
+    </table>
+</table>
+<h1 align="center"> {{ message }}</h1>
+
+</form>
+
+
+</font>
+
+
+</body>
+</html>

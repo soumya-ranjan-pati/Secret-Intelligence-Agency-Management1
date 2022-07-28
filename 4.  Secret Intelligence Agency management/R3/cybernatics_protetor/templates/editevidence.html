@@ -1,0 +1,18 @@
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<table>
+<tr><th>{% include "sideindex_ageent.html" %}</th>
+<th width="1000">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table align="center">
+        <tr><th width="200">{{ form }}</th>
+        <tr><th colspan="2"> <input type="submit" value="Update"></th>
+        </tr>
+    </table>
+
+
+</form>
+</th></tr>
+</table>
+</body>

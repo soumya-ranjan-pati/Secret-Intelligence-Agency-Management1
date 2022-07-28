@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+{% include "head.html" %}
+<font color="green">
+<table>
+        <tr>
+            <td width="200">{% include "homeindex.html" %}</td>
+            <td width="1000"><table align="center" >
+        <tr><th><a href="/story1/"><h1>Story 1</h1></a></th></tr>
+        <tr><th><a href="/story2/"><h1>Story 2</h1></a></th></tr>
+        <tr><th><a href="/all stories/"><h1>All stories</h1></a></th></tr>
+
+    </table></td>
+        </tr>
+</table>
+</font>
+</body>
+</html>

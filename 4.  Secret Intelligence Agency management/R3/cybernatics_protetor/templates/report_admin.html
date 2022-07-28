@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        tr#y2:nth-child(odd){
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body bgcolor="#ffefd5">
+
+{% include "heading.html" %}
+<font color="green">
+<table><tr><th>{% include "sideindex.html" %}</th>
+
+<th width="1000"><table align="center" border="1">
+    <tr bgcolor="#fff0f5">
+        <th>agent id</th>
+        <th>case id</th>
+        <th> case name</th>
+        <th>evidence</th>
+        <th>Image</th>
+        <th>status</th>
+    </tr>
+    {% for x in data %}
+        <tr bgcolor="#fffacd" id="y2">
+        <th>{{ x.agent_id }}</th>
+        <th>{{ x.case_id }}</th>
+        <th>{{ x.case_name }}</th>
+        <th>{{ x.evidence }}</th>
+        <th>
+            <img src="{{ x.image.url }}" width="50" height="50">
+        </th>
+        <th>{{ x.status }}</th>
+        </tr>
+    {% endfor %}
+</table></th>
+
+</tr>
+</table>
+</font>
+</body>
+</html>
+</body>
+</html>

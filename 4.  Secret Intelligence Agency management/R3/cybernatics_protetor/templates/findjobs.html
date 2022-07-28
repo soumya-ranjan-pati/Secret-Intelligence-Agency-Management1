@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+{% include "head.html" %}
+<font color="green">
+<table>
+        <tr>
+            <td width="200">{% include "homeindex.html" %}</td>
+            <td width="1000"><table align="center" border="1">
+                <tr>
+                    <th width="300">1.Recruitment for Agents</th>
+                    <th><a href="/viewjobs/">view</a></th>
+                    <th> <a href="/apply_jobs/">Apply</a></th>
+                </tr>
+                <tr>
+                    <th>2.Recruitment for Office Clerks </th>
+                    <th><a href="/viewclerkjobs/">view</a></th>
+                    <th><a href="/applyclerkjobs/">Apply</a></th>
+                </tr>
+            </table>
+             </td>
+        </tr>
+</table>
+</font>
+</body>
+</html>

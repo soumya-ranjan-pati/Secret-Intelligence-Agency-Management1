@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<font color="green">
+ <form action="/welcomedefence/" method="post">
+     {% csrf_token %}
+
+ <h2 align="center">WELCOME TO MINISTRY</h2>
+ <table align="center">
+     <tr><th>Enter User Name</th><th><INPUT type="text" required name="name"></th></tr>
+     <tr><th>Enter Password</th><th><input type="password" required name="password"></th></tr>
+
+     <tr><th colspan="2">
+         <input type="submit" value="Login"></th></tr>
+
+</table>
+
+
+</form>
+{{ message }}
+</font>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<font color="green">
+    <table><tr>
+            <form action="/savecasedetails/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <td width="200">{% include "sideindex.html" %}</td>
+            <td width="1000"><table align="center" border="1">
+                <tr><th>agent id</th><th><input type="number" value="{{ qs }}" name="agent id" readonly></th></tr>
+                 <tr><th>case id Name</th><th>
+                     <select name="case id">
+                         {% for foo in qs1 %}
+                             <option value="{{ foo.id }}">{{ foo.case_name }}</option>
+                         {% endfor %}
+                     </select>
+                     </th></tr>
+                <tr> <th>case name</th><th><input type="text" name="name"></th></tr>
+                <tr><th>evidence</th><th><input type="text" name="evidence"></th></tr>
+                <tr><th>Image</th><th><input type="file" name="image"></th></tr>
+                <tr><th>status</th><th><input type="text" name="status"></th></tr>
+                <tr><th colspan="5"><input type="submit" value="assign"></th></tr>
+                </table>
+            </td>
+                <h1>{{ message }}</h1>
+            </form>
+        </tr>
+
+</table>
+</font>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<table>
+    <tr><th>{% include "sideindex.html" %}</th>
+    <th width="900"><table align="center">
+       <tr><th width="500" height="100"><a href="/createagent/">Create Agent</a> </th></tr>
+        <br><br>
+      <tr> <th width="500" height="100"><a href="/editagent/">Update Agent</a> </th></tr>
+        <br><br>
+      <tr><th height="100"><a href="/viewallagents/">View Agent</a> </th></tr>
+        </th></tr>
+</table>
+</table>
+</body>
+</html>

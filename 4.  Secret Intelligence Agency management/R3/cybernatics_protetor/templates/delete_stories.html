@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+    <tr>
+        <th  width="200">
+            {% include "sideindex.html" %}
+        </th>
+
+        <th width="1000">
+            <table align="center" border="2">
+                <tr>
+                    <th>Story ID</th>
+                    <th>Story Title</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Delete</th>
+                </tr>
+                {% for x in object_list %}
+                    <tr bgcolor="#fdf5e6">
+                    <th>{{ x.id }}</th>
+                    <th>{{ x.story_title }}</th>
+                    <th>{{ x.Description }}</th>
+                    <th>
+                        <img src="{{ x.image.url }}" width="70" height="60" alt="No Iamge">
+                    </th>
+                    <th><a href="{% url 'delete_story' x.id %}">YES</a></th>
+                    </tr>
+                {% endfor %}
+
+            </table>
+    </th>
+    </tr></table>
+</form>
+</body>
+</html>

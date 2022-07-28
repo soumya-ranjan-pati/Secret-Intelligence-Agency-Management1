@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#ffefd5">
+
+{% include "heading.html" %}
+<form action="/agentcase/" method="post">
+    {% csrf_token %}
+
+
+<table><tr><th>{% include "sideindex_ageent.html" %}</th>
+    <th width="1000"><table align="center"><tr><th colspan="2">APPOINTING CASE</th></tr>
+
+    <tr><th>Enter Agent id : </th><th>
+        <select name="agent id">
+            {% for object in object_list %}
+                <option value="{{ object.id }}">{{ object.id }}</option>
+            {% endfor %}
+
+        </select>
+        </th></tr>
+    <th colspan="2"><input type="submit" value="Appoint"></th>
+    </tr>
+    </table>
+</table>
+<h1 align="center"> {{ message }}</h1>
+
+</form>
+
+
+
+
+</body>
+</html>

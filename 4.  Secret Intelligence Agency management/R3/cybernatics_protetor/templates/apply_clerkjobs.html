@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<font color="green">
+<>
+
+            <form action="/clerk_applicant/" method="post">
+        {% csrf_token %}
+             <tr>
+            <td width="200">{% include "homeindex.html" %}</td>
+            <td width="1000"><table align="center" border="1">
+                <tr><th>JOB_TITLE</th><th><input type="text" required name="name"></th></tr>
+                <tr> <th>First Name</th>
+                    <th><input type="text" required name="fn"></th></tr>
+                <tr> <th>Last Name</th><th><input type="text" required name="ln"></th></tr>
+                <tr> <th>Date of Birth</th><th><input type="date" required name="dob"></th></tr>
+                <tr> <th>Qualification</th><th><input type="text" required name="quali"></th></tr>
+                <tr> <th>percentage</th><th><input type="number" required name="percentage"></th></tr>
+                <tr> <th>Institute</th><th><input type="text" required name="institute"></th></tr>
+                <tr> <th>Experience</th><th><input type="number" required name="exp"></th></tr>
+                <tr> <th>Contact Number</th><th><input type="number" required name="cno"></th></tr>
+                <tr><th colspan="2" ><input type="submit" value="Apply"></th></tr>
+            </table>
+             </td>
+                </tr>
+            </form>
+
+
+</table>
+</font>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#ffefd5">
+{% include "heading.html" %}
+<form action="/succestories/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<table>
+    <tr>
+        <th  width="200">
+            {% include "sideindex.html" %}
+        </th>
+        <th width="1000"><table align="center">
+    <tr><th>Story Title:</th><th><input type="text"  name="t1"></th></tr>
+    <tr><th>Description:</th><th><input type="text" name="t2"> </th></tr>
+    <tr><th>Image:</th><th><input type="file" name="t3"> </th></tr>
+    <tr><th colspan="2"><input type="submit" value="add"></th></tr>
+</table>
+            <a href="/delete_success/"><font color="red">Delete</font></a>Success Stories
+
+        </th>
+    </tr>
+</table>
+
+</form>
+
+
+</body>
+</html>
